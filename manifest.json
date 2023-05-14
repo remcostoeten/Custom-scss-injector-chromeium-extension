@@ -1,0 +1,23 @@
+{
+  "manifest_version": 2,
+  "name": "Remco Stoeten Custom SCSS Extension",
+  "version": "1.0",
+  "description": "Add custom SCSS to any webpage and see the changes live.",
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "popup.html",
+    "default_title": "Custom SCSS Extension"
+  },
+  "permissions": [
+    "activeTab",
+    "storage",
+    "<all_urls>"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["contentScript.js"]
+    }
+  ]
+}
+
