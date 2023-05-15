@@ -1,21 +1,23 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <style>
-      body {
-        width: 300px;
-        height: 400px;
-        margin: 0;
-        padding: 0;
-        font-family: Arial, sans-serif;
-      }
-    </style>
-  </head>
-  <body>
-    <h1>Custom SCSS</h1>
-    <textarea id="scss-input" style="width: 100%; height: 80%;"></textarea>
-    <button id="apply-button">Apply SCSS</button>
-    <script src="popup.js"></script>
-  </body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.61.1/codemirror.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.61.1/theme/material.min.css">
+  <title>SCSS Compiler Extension</title>
+</head>
+<body>
+  <h1>SCSS Compiler</h1>
+  <textarea id="scss-editor" class="code-editor"></textarea>
+  <input id="url-input" type="text" placeholder="Enter the URL">
+  <button id="save-button">Save</button>
+  <button id="reset-button">Reset</button>
+  <div id="compiled-css"></div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.61.1/codemirror.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.61.1/mode/sass/sass.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.61.1/mode/css/css.min.js"></script>
+  <script src="popup.js"></script>
+</body>
 </html>
-

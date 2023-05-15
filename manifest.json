@@ -1,23 +1,35 @@
 {
-  "manifest_version": 2,
-  "name": "Remco Stoeten Custom SCSS Extension",
+  "manifest_version": 3,
+  "name": "__MSG_extName__",
   "version": "1.0",
-  "description": "Add custom SCSS to any webpage and see the changes live.",
-  "browser_action": {
-    "default_icon": "icon.png",
+  "description": "__MSG_extDescription__",
+  "action": {
     "default_popup": "popup.html",
-    "default_title": "Custom SCSS Extension"
+    "default_icon": {
+      "32": "images/icon32.png",
+      "48": "images/icon48.png"
+    }
   },
-  "permissions": [
-    "activeTab",
-    "storage",
-    "<all_urls>"
-  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+   "permissions": ["activeTab", "storage"],
+  "host_permissions": ["<all_urls>"],
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
-      "js": ["contentScript.js"]
+      "js": ["content.js"],
+      "web_accessible_resources": [
+        {
+          "resources": ["styles.css", "codemirror.css", "codemirror.js", "mode/css/css.js", "mode/sass/sass.js"]
+        }
+      ]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["styles.css", "codemirror.css", "codemirror.js", "mode/css/css.js", "mode/sass/sass.js"],
+      "matches": ["<all_urls>"]
     }
   ]
 }
-
